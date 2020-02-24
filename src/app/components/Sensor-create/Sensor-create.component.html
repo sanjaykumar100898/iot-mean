@@ -1,0 +1,107 @@
+<div class="row justify-content-center">
+  <div class="col-md-4 register-Sensor">
+    <!-- form card register -->
+    <div class="card-body">
+      <form [formGroup]="SensorForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="inputName">Sensor_name</label>
+          <input class="form-control" type="text" formControlName="Sensor_name">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.Sensor_name.errors?.required">
+            name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">Sensor_id</label>
+          <input class="form-control" type="text" formControlName="Sensor_id">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.Sensor_id.errors?.required">
+            Enter your id.
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">threshold</label>
+          <input class="form-control" type="text" formControlName="threshold">
+
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.threshold.errors?.required">
+            Enter your threshold.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">location_ip</label>
+          <input class="form-control" type="text" formControlName="location_ip">
+        </div>
+        <!-- error -->
+        <div class="invalid-feedback" *ngIf="submitted && myForm.location_ip.errors?.required">
+          Enter your location.
+        </div>
+
+
+        <div class="form-group">
+          <label for="inputName">building_ip</label>
+          <input class="form-control" type="text" formControlName="building_ip">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.building_ip.errors?.required">
+            Enter your id.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">floor</label>
+          <input class="form-control" type="text" formControlName="floor">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.floor.errors?.required">
+            Enter floor.
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">Sensor_unit</label>
+          <select class="custom-select form-control" (change)="updateProfile($event.target.value)"
+            formControlName="Sensor_unit">
+            <option value="">Choose...</option>
+            <option *ngFor="let SensorProfile of SensorProfile" value="{{SensorProfile}}">{{SensorProfile}}
+            </option>
+          </select>
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.Sensor_unit.errors?.required">
+            Choose unit.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inputName">Sensor_value</label>
+          <input class="form-control" type="text" formControlName="Sensor_value">
+          <!-- error -->
+          <div class="invalid-feedback" *ngIf="submitted && myForm.Sensor_value.errors?.required">
+            Enter value.
+          </div>
+          <div class="invalid-feedback" *ngIf="submitted && myForm.Sensor_value.errors?.pattern">
+            Enter Numbers Only
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit">Register</button>
+        </div>
+      </form>
+
+    </div>
+  </div><!-- form card register -->
+</div>
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+
+  <nav class="my-2 my-md-0 mr-md-3">
+    <a class="btn btn-outline-primary" routerLinkActive="active" routerLink="/Sensor-list">View Sensors</a>
+  </nav>
+
+</div>
+<span class="count" (click)="countSensors()">
+  <button type="button" class="btn btn-danger btn-sm">count</button>
+</span>

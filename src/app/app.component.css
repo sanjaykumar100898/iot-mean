@@ -1,0 +1,54 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+.bigbox1 {
+  width: 100%;
+  padding: 0px;
+  color: #000000;
+  font-size: 20px;
+  text-align: left;
+  margin:5px auto 5px;
+  font-weight: 500;
+  display: flex;
+  font-family: inherit;
+  height: auto;
+}
+
+.box1{
+  width:20%;
+  height: auto;
+  float: left;
+  margin: 20px 10px;
+  transition: 0.5s;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flexbox;
+}
+
+.box2{
+width:75%;
+height: auto;
+float: left;
+margin: 20px 10px;
+transition: 0.8s;
+font-family: inherit;
+font-weight: 400;
+font-size: 18px;
+border-right: 1px #000;
+display: flexbox;
+color:black;
+}
+
+
+.box1 p{
+    text-align: center;
+    color: #000;
+    letter-spacing:3px;
+    font-size:15px;
+    font-weight:300;
+    font-family: inherit;
+}
+
